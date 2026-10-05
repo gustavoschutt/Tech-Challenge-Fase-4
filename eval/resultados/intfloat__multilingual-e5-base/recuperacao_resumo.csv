@@ -1,0 +1,5 @@
+modo,precisao@8,rr
+bm25,0.672,0.938
+densa,0.797,0.938
+hibrida,0.875,1.0
+hibrida+reranker,0.922,1.0

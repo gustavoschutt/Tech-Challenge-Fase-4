@@ -1,0 +1,6 @@
+id,pergunta,esperado,obtido,acerto
+T04,Quais padrões podem ser identificados nas avaliações de clientes insatisfeitos?,{'nota_max': 2},{'nota_max': 2},True
+T06,Quais são os principais problemas relatados nas avaliações com nota baixa?,{'nota_max': 2},{'nota_max': 2},True
+T07,O que os clientes mais elogiam em produtos de beleza e saúde?,{'categorias': ['beleza_saude']},{'categorias': ['beleza_saude']},True
+T15,Quais problemas aparecem nas avaliações negativas de móveis em 2018?,"{'nota_max': 2, 'data_inicio': '2018-01-01', 'data_fim': '2019-01-01', 'categorias': ['moveis_cozinha_area_de_servico_jantar_e_jardim', 'moveis_colchao_e_estofado', 'moveis_decoracao', 'moveis_escritorio', 'moveis_quarto', 'moveis_sala']}","{'nota_max': 2, 'data_inicio': '2018-01-01', 'data_fim': '2019-01-01', 'categorias': ['moveis_colchao_e_estofado', 'moveis_cozinha_area_de_servico_jantar_e_jardim', 'moveis_decoracao', 'moveis_escritorio', 'moveis_quarto', 'moveis_sala']}",True
+T16,O que dizem os clientes de SP sobre pedidos entregues com atraso?,"{'ufs': ['SP'], 'situacao_entrega': ['atrasada']}","{'ufs': ['SP'], 'situacao_entrega': ['atrasada']}",True

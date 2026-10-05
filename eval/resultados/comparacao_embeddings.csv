@@ -1,0 +1,9 @@
+modelo,dimensao,segundos_indexacao,modo,precisao@8,mrr
+tfidf+svd(256),256,32.1,densa,0.625,0.75
+tfidf+svd(256),256,32.1,hibrida,0.75,0.875
+sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2,384,528.9,densa,0.594,0.677
+sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2,384,528.9,hibrida,0.828,0.938
+intfloat/multilingual-e5-small,384,635.8,densa,0.844,0.875
+intfloat/multilingual-e5-small,384,635.8,hibrida,0.859,1.0
+intfloat/multilingual-e5-base,768,1846.0,densa,0.797,0.938
+intfloat/multilingual-e5-base,768,1846.0,hibrida,0.875,1.0

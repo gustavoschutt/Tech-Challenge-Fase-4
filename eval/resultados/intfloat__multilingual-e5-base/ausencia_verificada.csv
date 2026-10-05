@@ -1,0 +1,6 @@
+id,regex,ocorrencias_na_base
+T17,\bpix\b,0
+T18,cashback|cash back,0
+T19,covid|pandemia|coronavirus|quarentena,0
+T20,motoboy|moto boy|motoqueiro,0
+T21,cripto|bitcoin|btc,0

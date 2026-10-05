@@ -1,0 +1,225 @@
+{
+ "descricao": "Conjunto de TESTE. Não é usado na calibração dos limiares. 'relevancia_regex' define relevância 'silver' (aplicada ao texto normalizado: minúsculas, sem acento). 'verificacao_ausencia' é uma regex que DEVE ter zero ocorrências na base (o script de avaliação confere).",
+ "perguntas": [
+  {
+   "id": "T01",
+   "tipo": "respondivel",
+   "origem": "enunciado",
+   "pergunta": "Quais são os principais problemas relatados pelos clientes em suas avaliações?"
+  },
+  {
+   "id": "T02",
+   "tipo": "respondivel",
+   "origem": "enunciado",
+   "pergunta": "O que os clientes relatam sobre problemas relacionados à entrega?"
+  },
+  {
+   "id": "T03",
+   "tipo": "respondivel",
+   "origem": "enunciado",
+   "pergunta": "Quais aspectos da experiência de compra são mais elogiados pelos clientes?"
+  },
+  {
+   "id": "T04",
+   "tipo": "respondivel",
+   "origem": "enunciado",
+   "pergunta": "Quais padrões podem ser identificados nas avaliações de clientes insatisfeitos?",
+   "filtros_esperados": {
+    "nota_max": 2
+   }
+  },
+  {
+   "id": "T05",
+   "tipo": "respondivel",
+   "origem": "enunciado",
+   "pergunta": "Quais avaliações sustentam a conclusão de que existem problemas recorrentes relacionados ao prazo de entrega?",
+   "relevancia_regex": "prazo|atras|demor|nao chegou|ainda nao (chegou|recebi)|nao receb"
+  },
+  {
+   "id": "T06",
+   "tipo": "respondivel",
+   "origem": "enunciado",
+   "pergunta": "Quais são os principais problemas relatados nas avaliações com nota baixa?",
+   "filtros_esperados": {
+    "nota_max": 2
+   }
+  },
+  {
+   "id": "T07",
+   "tipo": "respondivel",
+   "origem": "enunciado",
+   "pergunta": "O que os clientes mais elogiam em produtos de beleza e saúde?",
+   "filtros_esperados": {
+    "categorias": [
+     "beleza_saude"
+    ]
+   }
+  },
+  {
+   "id": "T08",
+   "tipo": "respondivel",
+   "origem": "equipe",
+   "pergunta": "O que os clientes contam sobre mercadorias que chegaram quebradas ou danificadas?",
+   "relevancia_regex": "quebr|danific|avari|amass|trinc|rach|estrag|defeito"
+  },
+  {
+   "id": "T09",
+   "tipo": "respondivel",
+   "origem": "equipe",
+   "pergunta": "Há reclamações de clientes que receberam um item diferente do que compraram?",
+   "relevancia_regex": "errad|diferente|trocad|outro produto|outra cor|nao era o|nao corresponde|nao e o que|veio outro|enviaram outro"
+  },
+  {
+   "id": "T10",
+   "tipo": "respondivel",
+   "origem": "equipe",
+   "pergunta": "Como a paralisação dos caminhoneiros afetou as entregas segundo os clientes?",
+   "relevancia_regex": "greve|caminhoneir|paralisac"
+  },
+  {
+   "id": "T11",
+   "tipo": "respondivel",
+   "origem": "equipe",
+   "pergunta": "Que queixas os compradores fazem sobre a emissão da nota fiscal?",
+   "relevancia_regex": "nota fiscal|\\bnf\\b|\\bnfe\\b|\\bdanfe\\b|cupom fiscal"
+  },
+  {
+   "id": "T12",
+   "tipo": "respondivel",
+   "origem": "equipe",
+   "pergunta": "Existem relatos de produtos falsificados ou que não eram originais?",
+   "relevancia_regex": "falsif|pirata|replica|original|falso|paralelo"
+  },
+  {
+   "id": "T13",
+   "tipo": "respondivel",
+   "origem": "equipe",
+   "pergunta": "O que os consumidores dizem quando receberam só parte dos itens do pedido?",
+   "relevancia_regex": "falt|apenas|somente|so (um|uma|1|veio|chegou|recebi)|incomplet|metade|nao veio|resto|restante|outro item|outros itens|segundo"
+  },
+  {
+   "id": "T14",
+   "tipo": "respondivel",
+   "origem": "equipe",
+   "pergunta": "Que dificuldades os clientes relatam para falar com o vendedor ou com o atendimento?",
+   "relevancia_regex": "contat|atend|respond|resposta|retorno|e-?mail|telefon|ligu|ligac|sac\\b|reclam"
+  },
+  {
+   "id": "T15",
+   "tipo": "respondivel",
+   "origem": "equipe",
+   "pergunta": "Quais problemas aparecem nas avaliações negativas de móveis em 2018?",
+   "filtros_esperados": {
+    "nota_max": 2,
+    "data_inicio": "2018-01-01",
+    "data_fim": "2019-01-01",
+    "categorias": [
+     "moveis_cozinha_area_de_servico_jantar_e_jardim",
+     "moveis_colchao_e_estofado",
+     "moveis_decoracao",
+     "moveis_escritorio",
+     "moveis_quarto",
+     "moveis_sala"
+    ]
+   }
+  },
+  {
+   "id": "T16",
+   "tipo": "respondivel",
+   "origem": "equipe",
+   "pergunta": "O que dizem os clientes de SP sobre pedidos entregues com atraso?",
+   "filtros_esperados": {
+    "ufs": [
+     "SP"
+    ],
+    "situacao_entrega": [
+     "atrasada"
+    ]
+   }
+  },
+  {
+   "id": "T17",
+   "tipo": "sem_evidencia",
+   "pergunta": "O que os clientes acham de pagar com Pix?",
+   "verificacao_ausencia": "\\bpix\\b"
+  },
+  {
+   "id": "T18",
+   "tipo": "sem_evidencia",
+   "pergunta": "Quais reclamações existem sobre o programa de cashback?",
+   "verificacao_ausencia": "cashback|cash back"
+  },
+  {
+   "id": "T19",
+   "tipo": "sem_evidencia",
+   "pergunta": "Os atrasos foram causados pela pandemia de covid-19?",
+   "verificacao_ausencia": "covid|pandemia|coronavirus|quarentena"
+  },
+  {
+   "id": "T20",
+   "tipo": "sem_evidencia",
+   "pergunta": "Como os clientes avaliam as entregas feitas por motoboy?",
+   "verificacao_ausencia": "motoboy|moto boy|motoqueiro"
+  },
+  {
+   "id": "T21",
+   "tipo": "sem_evidencia",
+   "pergunta": "O que os clientes falam sobre pagamento com criptomoedas?",
+   "verificacao_ausencia": "cripto|bitcoin|btc"
+  },
+  {
+   "id": "T22",
+   "tipo": "insuficiente",
+   "pergunta": "O que os clientes relatam sobre a compra de patinetes?",
+   "nota": "1 menção na base ('patinete')."
+  },
+  {
+   "id": "T23",
+   "tipo": "insuficiente",
+   "pergunta": "Como foi o atendimento pelo WhatsApp segundo os clientes?",
+   "nota": "3 menções a 'whatsapp', 2 sobre atendimento."
+  },
+  {
+   "id": "T24",
+   "tipo": "insuficiente",
+   "pergunta": "O que os clientes dizem sobre o serviço de montador dos móveis?",
+   "nota": "1 menção a 'montador'."
+  },
+  {
+   "id": "T25",
+   "tipo": "insuficiente",
+   "pergunta": "Que problemas os clientes tiveram com geladeiras compradas?",
+   "nota": "4 menções a 'geladeira', nem todas sobre o produto geladeira."
+  },
+  {
+   "id": "T26",
+   "tipo": "fora_escopo",
+   "pergunta": "Qual é a capital da Austrália?"
+  },
+  {
+   "id": "T27",
+   "tipo": "fora_escopo",
+   "pergunta": "Qual será a taxa Selic no fim do ano que vem?"
+  },
+  {
+   "id": "T28",
+   "tipo": "fora_escopo",
+   "pergunta": "Escreva um poema sobre o pôr do sol na praia."
+  },
+  {
+   "id": "T29",
+   "tipo": "fora_escopo",
+   "pergunta": "Qual foi o faturamento da Olist em 2023?"
+  },
+  {
+   "id": "T30",
+   "tipo": "fora_escopo",
+   "pergunta": "Como faço para trocar o óleo do motor do meu carro?"
+  },
+  {
+   "id": "T31",
+   "tipo": "fora_escopo",
+   "pergunta": "Quem venceu a Copa do Mundo de 2002?"
+  }
+ ]
+}

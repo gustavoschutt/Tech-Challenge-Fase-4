@@ -1,0 +1,27 @@
+{
+  "descricao": "Conjunto de CALIBRAÇÃO dos limiares do gate (escopo e relevância). Perguntas diferentes das do conjunto de teste.",
+  "perguntas": [
+    {"id": "C01", "tipo": "respondivel", "pergunta": "O que os clientes falam sobre a embalagem dos produtos?"},
+    {"id": "C02", "tipo": "respondivel", "pergunta": "Quais elogios os clientes fazem sobre a rapidez da entrega?"},
+    {"id": "C03", "tipo": "respondivel", "pergunta": "O que os clientes relatam sobre pedidos que nunca chegaram?"},
+    {"id": "C04", "tipo": "respondivel", "pergunta": "Que problemas os clientes relatam com os Correios?"},
+    {"id": "C05", "tipo": "respondivel", "pergunta": "O que dizem sobre trocas e devoluções de produtos?"},
+    {"id": "C06", "tipo": "respondivel", "pergunta": "Como os clientes avaliam a qualidade dos produtos recebidos?"},
+    {"id": "C07", "tipo": "respondivel", "pergunta": "Há reclamações sobre o tamanho das roupas ou calçados?"},
+    {"id": "C08", "tipo": "respondivel", "pergunta": "O que os clientes dizem sobre reembolso e estorno do pagamento?"},
+    {"id": "C09", "tipo": "respondivel", "pergunta": "Quais comentários falam de cartuchos de impressora que não funcionaram?"},
+    {"id": "C10", "tipo": "respondivel", "pergunta": "O que os clientes acham do preço do frete?"},
+
+    {"id": "C11", "tipo": "sem_evidencia", "pergunta": "O que os clientes acham do pagamento via PayPal?", "verificacao_ausencia": "paypal|pay pal"},
+    {"id": "C12", "tipo": "sem_evidencia", "pergunta": "Como os clientes avaliam a experiência de realidade aumentada no site?", "verificacao_ausencia": "realidade aumentada|realidade virtual"},
+    {"id": "C13", "tipo": "sem_evidencia", "pergunta": "Quais reclamações existem sobre entrega feita por drones?", "verificacao_ausencia": "entrega (por|via|com) drone|drones? entreg"},
+    {"id": "C14", "tipo": "sem_evidencia", "pergunta": "O que os clientes falam sobre o programa de pontos e milhas?", "verificacao_ausencia": "milhas|programa de pontos|pontos de fidelidade"},
+
+    {"id": "C15", "tipo": "fora_escopo", "pergunta": "Qual é a fórmula química da água?"},
+    {"id": "C16", "tipo": "fora_escopo", "pergunta": "Quem escreveu Dom Casmurro?"},
+    {"id": "C17", "tipo": "fora_escopo", "pergunta": "Qual a previsão do tempo para amanhã?"},
+    {"id": "C18", "tipo": "fora_escopo", "pergunta": "Me explique a teoria da relatividade."},
+    {"id": "C19", "tipo": "fora_escopo", "pergunta": "Qual o valor da ação da Petrobras hoje?"},
+    {"id": "C20", "tipo": "fora_escopo", "pergunta": "Traduza 'bom dia' para o japonês."}
+  ]
+}

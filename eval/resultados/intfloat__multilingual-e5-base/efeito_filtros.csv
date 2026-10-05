@@ -1,0 +1,11 @@
+id,filtros,modo,dentro_do_recorte@8,pct_da_base_no_recorte
+T04,nota 1–2,com filtro,1.0,0.2574
+T04,nota 1–2,sem filtro,0.5,0.2574
+T06,nota 1–2,com filtro,1.0,0.2574
+T06,nota 1–2,sem filtro,0.5,0.2574
+T07,categoria ∈ {beleza_saude},com filtro,1.0,0.0838
+T07,categoria ∈ {beleza_saude},sem filtro,0.125,0.0838
+T15,"nota 1–2; compra de 2018-01-01 até 2019-01-01 (exclusivo); categoria ∈ {moveis_colchao_e_estofado, moveis_cozinha_area_de_servico_jantar_e_jardim, moveis_decoracao, moveis_escritorio, moveis_quarto, moveis_sala}",com filtro,1.0,0.0128
+T15,"nota 1–2; compra de 2018-01-01 até 2019-01-01 (exclusivo); categoria ∈ {moveis_colchao_e_estofado, moveis_cozinha_area_de_servico_jantar_e_jardim, moveis_decoracao, moveis_escritorio, moveis_quarto, moveis_sala}",sem filtro,0.125,0.0128
+T16,UF ∈ {SP}; entrega ∈ {atrasada},com filtro,1.0,0.0237
+T16,UF ∈ {SP}; entrega ∈ {atrasada},sem filtro,0.0,0.0237

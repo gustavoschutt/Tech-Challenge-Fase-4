@@ -1,0 +1,29 @@
+# Configuração local e segredos (NUNCA versionar: contém chaves de API)
+.env
+
+# Dados brutos: versionamos só os 6 CSVs usados, compactados (.csv.gz).
+# Os .csv descompactados e os demais arquivos do Kaggle ficam fora.
+data/raw/*
+!data/raw/.gitkeep
+!data/raw/olist_order_reviews_dataset.csv.gz
+!data/raw/olist_orders_dataset.csv.gz
+!data/raw/olist_order_items_dataset.csv.gz
+!data/raw/olist_products_dataset.csv.gz
+!data/raw/olist_customers_dataset.csv.gz
+!data/raw/product_category_name_translation.csv.gz
+
+# Artefatos gerados (reprodutíveis pelos scripts)
+artifacts/
+
+# Python / ambientes
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Sistema
+.DS_Store
+Thumbs.db

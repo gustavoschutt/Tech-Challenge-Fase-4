@@ -1,0 +1,32 @@
+id,tipo,status_gate,acerto,acerto_estrito,score_escopo,n_relevantes,pergunta
+T01,respondivel,ok,True,True,0.847,3,Quais são os principais problemas relatados pelos clientes em suas avaliações?
+T02,respondivel,ok,True,True,0.8591,7,O que os clientes relatam sobre problemas relacionados à entrega?
+T03,respondivel,ok,True,True,0.8562,9,Quais aspectos da experiência de compra são mais elogiados pelos clientes?
+T04,respondivel,ok,True,True,0.8429,8,Quais padrões podem ser identificados nas avaliações de clientes insatisfeitos?
+T05,respondivel,sem_evidencias,False,False,0.8621,0,Quais avaliações sustentam a conclusão de que existem problemas recorrentes relacionados ao prazo de entrega?
+T06,respondivel,ok,True,True,0.8396,8,Quais são os principais problemas relatados nas avaliações com nota baixa?
+T07,respondivel,sem_evidencias,False,False,0.865,0,O que os clientes mais elogiam em produtos de beleza e saúde?
+T08,respondivel,ok,True,True,0.8662,7,O que os clientes contam sobre mercadorias que chegaram quebradas ou danificadas?
+T09,respondivel,ok,True,True,0.8736,26,Há reclamações de clientes que receberam um item diferente do que compraram?
+T10,respondivel,ok,True,True,0.8729,21,Como a paralisação dos caminhoneiros afetou as entregas segundo os clientes?
+T11,respondivel,ok,True,True,0.8554,6,Que queixas os compradores fazem sobre a emissão da nota fiscal?
+T12,respondivel,ok,True,True,0.8544,20,Existem relatos de produtos falsificados ou que não eram originais?
+T13,respondivel,ok,True,True,0.8647,25,O que os consumidores dizem quando receberam só parte dos itens do pedido?
+T14,respondivel,ok,True,True,0.8685,10,Que dificuldades os clientes relatam para falar com o vendedor ou com o atendimento?
+T15,respondivel,ok,True,True,0.8422,8,Quais problemas aparecem nas avaliações negativas de móveis em 2018?
+T16,respondivel,ok,True,True,0.863,8,O que dizem os clientes de SP sobre pedidos entregues com atraso?
+T17,sem_evidencia,fora_do_escopo,True,False,0.8306,0,O que os clientes acham de pagar com Pix?
+T18,sem_evidencia,sem_evidencias,True,True,0.8491,0,Quais reclamações existem sobre o programa de cashback?
+T19,sem_evidencia,sem_evidencias,True,True,0.8428,0,Os atrasos foram causados pela pandemia de covid-19?
+T20,sem_evidencia,sem_evidencias,True,True,0.8529,0,Como os clientes avaliam as entregas feitas por motoboy?
+T21,sem_evidencia,sem_evidencias,True,True,0.8348,0,O que os clientes falam sobre pagamento com criptomoedas?
+T22,insuficiente,evidencias_insuficientes,True,True,0.8321,1,O que os clientes relatam sobre a compra de patinetes?
+T23,insuficiente,sem_evidencias,True,False,0.8523,0,Como foi o atendimento pelo WhatsApp segundo os clientes?
+T24,insuficiente,evidencias_insuficientes,True,True,0.8401,1,O que os clientes dizem sobre o serviço de montador dos móveis?
+T25,insuficiente,ok,False,False,0.8387,9,Que problemas os clientes tiveram com geladeiras compradas?
+T26,fora_escopo,fora_do_escopo,True,True,0.7798,0,Qual é a capital da Austrália?
+T27,fora_escopo,sem_evidencias,True,False,0.8426,0,Qual será a taxa Selic no fim do ano que vem?
+T28,fora_escopo,sem_evidencias,True,False,0.8463,0,Escreva um poema sobre o pôr do sol na praia.
+T29,fora_escopo,fora_do_escopo,True,True,0.7945,0,Qual foi o faturamento da Olist em 2023?
+T30,fora_escopo,evidencias_insuficientes,False,False,0.8616,1,Como faço para trocar o óleo do motor do meu carro?
+T31,fora_escopo,fora_do_escopo,True,True,0.7795,0,Quem venceu a Copa do Mundo de 2002?

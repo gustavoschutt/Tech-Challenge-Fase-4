@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "voc-rag-olist"
+version = "1.0.0"
+description = "Voice of Customer Intelligence com RAG sobre as avaliações da Olist (FIAP Pós-Tech · Fase 4)"
+readme = "README.md"
+requires-python = ">=3.12"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

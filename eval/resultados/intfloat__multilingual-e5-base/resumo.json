@@ -1,0 +1,58 @@
+{
+  "modelo_embeddings": "intfloat/multilingual-e5-base",
+  "reranker": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+  "limiares": {
+    "escopo": 0.8316,
+    "relevancia": 0.053,
+    "min_evidencias": 3,
+    "min_base_analitico": 30,
+    "calibrados": true
+  },
+  "filtros_acerto": 1.0,
+  "efeito_filtros_medio": {
+    "com filtro": 1.0,
+    "sem filtro": 0.25
+  },
+  "recuperacao": [
+    {
+      "modo": "bm25",
+      "precisao@8": 0.672,
+      "rr": 0.938
+    },
+    {
+      "modo": "densa",
+      "precisao@8": 0.797,
+      "rr": 0.938
+    },
+    {
+      "modo": "hibrida",
+      "precisao@8": 0.875,
+      "rr": 1.0
+    },
+    {
+      "modo": "hibrida+reranker",
+      "precisao@8": 0.922,
+      "rr": 1.0
+    }
+  ],
+  "gate_acerto_por_tipo": {
+    "fora_escopo": 0.833,
+    "insuficiente": 0.75,
+    "respondivel": 0.875,
+    "sem_evidencia": 1.0
+  },
+  "gate_acerto_geral": 0.871,
+  "gate_acerto_estrito_geral": 0.742,
+  "llm": "gemini:gemini-3.8-flash",
+  "ponta_a_ponta_acerto_por_tipo": {
+    "fora_escopo": 0.833,
+    "insuficiente": 1.0,
+    "respondivel": 1.0,
+    "sem_evidencia": 1.0
+  },
+  "ponta_a_ponta_acerto_geral": 0.968,
+  "ponta_a_ponta_acerto_estrito_geral": 0.806,
+  "respostas_ok": 16,
+  "citacoes_invalidas_total": 0,
+  "linhas_sem_citacao_removidas_total": 0
+}

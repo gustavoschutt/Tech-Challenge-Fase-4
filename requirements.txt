@@ -1,0 +1,32 @@
+# Versões mínimas = versões testadas (Windows com Python 3.12.10 e Linux com Python 3.13).
+# Versões mais antigas não foram testadas.
+
+# Núcleo do pipeline
+numpy>=2.5
+pandas>=3.0
+pyarrow>=25.0
+scikit-learn>=1.9
+faiss-cpu>=1.15
+rank-bm25>=0.2.2
+snowballstemmer>=3.1
+python-dotenv>=1.2
+
+# Modelos (embeddings, reranker e LLM local)
+# Dica: instale o torch ANTES, escolhendo CPU ou GPU (ver README).
+torch>=2.14
+sentence-transformers>=6.1
+transformers>=5.18
+accelerate>=1.15
+
+# Provedores de LLM por API (opcionais; só se for usar)
+openai>=3.24
+anthropic>=1.11
+
+# Interface, notebooks, relatórios e testes
+streamlit>=1.65
+matplotlib>=3.11
+tabulate>=0.10
+jupyter>=1.1
+nbconvert>=7.17
+ipykernel>=7.4
+pytest>=9.1
