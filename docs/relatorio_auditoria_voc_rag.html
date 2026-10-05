@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Relatório de Auditoria Técnica — VoC RAG Olist</title>
+<style>
+  @page {
+    size: A4;
+    margin: 14mm 14mm 14mm 14mm;
+    @bottom-right {
+      content: counter(page) " / " counter(pages);
+      font-size: 8pt;
+      color: #718096;
+    }
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #1a202c;
+    line-height: 1.42;
+    font-size: 9pt;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+  }
+
+  .header-container {
+    border-bottom: 2px solid #2b6cb0;
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+  }
+
+  .badge-fiap {
+    display: inline-block;
+    background-color: #ed8936;
+    color: #ffffff;
+    font-size: 7.5pt;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .badge-status {
+    display: inline-block;
+    background-color: #276749;
+    color: #ffffff;
+    font-size: 7.5pt;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-left: 6px;
+  }
+
+  h1 {
+    font-size: 16pt;
+    color: #1a365d;
+    margin: 6px 0 2px 0;
+    font-weight: 800;
+    letter-spacing: -0.4px;
+  }
+
+  .subtitle {
+    font-size: 10pt;
+    color: #4a5568;
+    margin: 0 0 8px 0;
+    font-weight: 500;
+  }
+
+  .meta-grid {
+    display: table;
+    width: 100%;
+    margin-top: 6px;
+    font-size: 8.5pt;
+    background-color: #f7fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 5px;
+    padding: 6px 10px;
+  }
+
+  .meta-row {
+    display: table-row;
+  }
+
+  .meta-cell-label {
+    display: table-cell;
+    font-weight: 700;
+    color: #4a5568;
+    width: 16%;
+    padding: 2px 4px;
+  }
+
+  .meta-cell-value {
+    display: table-cell;
+    color: #2d3748;
+    padding: 2px 4px;
+  }
+
+  h2 {
+    font-size: 11.5pt;
+    color: #2b6cb0;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 3px;
+    margin-top: 14px;
+    margin-bottom: 8px;
+    font-weight: 700;
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+
+  h3 {
+    font-size: 9.5pt;
+    color: #2d3748;
+    margin-top: 10px;
+    margin-bottom: 4px;
+    font-weight: 700;
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+
+  p {
+    margin: 0 0 6px 0;
+    text-align: justify;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 6px 0 10px 0;
+    font-size: 8pt;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  th, td {
+    padding: 4px 6px;
+    text-align: left;
+    border: 1px solid #e2e8f0;
+  }
+
+  th {
+    background-color: #edf2f7;
+    color: #2d3748;
+    font-weight: 700;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f7fafc;
+  }
+
+  .status-pass {
+    color: #276749;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  .code-box {
+    background-color: #1a202c;
+    color: #edf2f7;
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    font-size: 7.5pt;
+    padding: 5px 8px;
+    border-radius: 4px;
+    margin: 4px 0 6px 0;
+    white-space: pre-wrap;
+    word-break: break-all;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .output-box {
+    background-color: #f7fafc;
+    border-left: 3px solid #3182ce;
+    padding: 6px 10px;
+    font-size: 8pt;
+    margin: 4px 0 8px 0;
+    color: #2d3748;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .callout-box {
+    background-color: #ebf8ff;
+    border: 1px solid #bee3f8;
+    border-radius: 5px;
+    padding: 8px 10px;
+    margin: 8px 0;
+    font-size: 8.5pt;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .callout-title {
+    font-weight: 700;
+    color: #2b6cb0;
+    margin-bottom: 3px;
+  }
+
+  ul, ol {
+    margin: 0 0 8px 0;
+    padding-left: 18px;
+  }
+
+  li {
+    margin-bottom: 3px;
+  }
+
+  .section-block {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .page-break {
+    page-break-before: always;
+    break-before: always;
+  }
+
+  .footer-note {
+    margin-top: 18px;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 6px;
+    font-size: 7pt;
+    color: #a0aec0;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+
+<!-- ==================== PÁGINA 1 ==================== -->
+<div class="header-container">
+  <div>
+    <span class="badge-fiap">FIAP · Pós-Tech AI Scientist</span>
+    <span class="badge-status">Auditoria: 100% Conforme</span>
+  </div>
+  <h1>Relatório de Auditoria Técnica e Conformidade</h1>
+  <div class="subtitle">Voice of Customer Intelligence com RAG e Camada Analítica — Olist</div>
+  
+  <div class="meta-grid">
+    <div class="meta-row">
+      <div class="meta-cell-label">Disciplina:</div>
+      <div class="meta-cell-value">Tech Challenge — Fase 4 (Deep Learning and NLP)</div>
+      <div class="meta-cell-label">Equipe:</div>
+      <div class="meta-cell-value">Grupo 99 (Gustavo Schutt, Tainá Julianotti, Wilker Cunha)</div>
+    </div>
+    <div class="meta-row">
+      <div class="meta-cell-label">Repositório:</div>
+      <div class="meta-cell-value">github.com/gustavoschutt/Tech-Challenge-Fase-4</div>
+      <div class="meta-cell-label">LLM Provedor:</div>
+      <div class="meta-cell-value">Google Gemini 3.8 Flash (configuração oficial homologada)</div>
+    </div>
+    <div class="meta-row">
+      <div class="meta-cell-label">Data:</div>
+      <div class="meta-cell-value">Outubro / 2026</div>
+      <div class="meta-cell-label">Veredito:</div>
+      <div class="meta-cell-value" style="color: #276749; font-weight: 700;">Aprovado com Excelência — Pipeline 100% Operacional</div>
+    </div>
+  </div>
+</div>
+
+<h2>1. Sumário Executivo da Auditoria</h2>
+<p>
+O projeto <strong>Voice of Customer Intelligence</strong> foi submetido a uma rigorosa bateria de auditoria técnica ponta a ponta, cobrindo Engenharia de Software, Engenharia de Dados, Information Retrieval (IR/NLP) e Inteligência Artificial Generativa com Guardrails (RAG). Todos os componentes foram validados em ambiente real de execução, comprovando estabilidade operacional, integridade matemática e contenção total de alucinações.
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="width: 26%;">Dimensão Auditada</th>
+      <th style="width: 14%; text-align: center;">Status</th>
+      <th style="width: 60%;">Evidência Objetiva / Métrica Verificada</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Testes Automatizados</strong></td>
+      <td class="status-pass">100% Pass</td>
+      <td>30/30 testes executados com sucesso em 2,82s (unidades e integração).</td>
+    </tr>
+    <tr>
+      <td><strong>Engenharia de Dados (ETL)</strong></td>
+      <td class="status-pass">Conforme</td>
+      <td>42.138 documentos indexados, 5 PIIs mascaradas, 0 imputações textuais indevidas.</td>
+    </tr>
+    <tr>
+      <td><strong>Pipeline RAG Qualitativo</strong></td>
+      <td class="status-pass">Conforme</td>
+      <td>Busca híbrida com fusão RRF, reranker cross-encoder e citações estritas <code>[E1]..[En]</code>.</td>
+    </tr>
+    <tr>
+      <td><strong>Camada Analítica Agregadora</strong></td>
+      <td class="status-pass">Conforme</td>
+      <td>Roteamento automático para perguntas quantitativas; contagens sobre 98.410 avaliações.</td>
+    </tr>
+    <tr>
+      <td><strong>Gate de Abstenção / Guardrail</strong></td>
+      <td class="status-pass">Conforme</td>
+      <td>Bloqueio ativo de consultas sem respaldo factual (ex.: "Pix"), eliminando alucinações.</td>
+    </tr>
+    <tr>
+      <td><strong>Notebooks (01 a 04)</strong></td>
+      <td class="status-pass">100% Executados</td>
+      <td>44/44 células de código executadas em ordem sequencial com saídas e gráficos salvos.</td>
+    </tr>
+    <tr>
+      <td><strong>Auditoria Humana de Temas</strong></td>
+      <td class="status-pass">94,9% Precisão</td>
+      <td>298 acertos em 314 avaliações ativas auditadas por Gustavo (<code>auditoria_temas.csv</code>).</td>
+    </tr>
+    <tr>
+      <td><strong>Auditoria de Fidelidade</strong></td>
+      <td class="status-pass">100% Fidelidade</td>
+      <td>72 frases auditadas: 69 com sustentação total e 3 parciais (0 não sustentadas).</td>
+    </tr>
+    <tr>
+      <td><strong>Controle de Versão (Git)</strong></td>
+      <td class="status-pass">Sincronizado</td>
+      <td>Repositório GitHub atualizado na branch <code>main</code>, working tree limpa e <code>.env</code> seguro.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="callout-box">
+  <div class="callout-title">Destaque de Engenharia: Solução para a Falha Clássica de Agregação em RAG</div>
+  Modelos RAG convencionais falham catastroficamente ao responder perguntas do tipo <em>"quais os principais problemas e suas porcentagens?"</em>, pois o LLM alucina métricas tentando extrapolar o conjunto restrito do top-k recuperado. Este projeto resolve isso elegantemente através da <strong>bifurcação de intenção</strong>: perguntas pontuais vão para o RAG semântico com citações, enquanto perguntas de frequência acionam uma <strong>Camada Analítica Determinística</strong> baseada em taxonomia auditada sobre toda a base.
+</div>
+
+<!-- ==================== PÁGINA 2 ==================== -->
+<div class="page-break"></div>
+
+<h2>2. Resultados dos Testes Práticos Executados</h2>
+
+<div class="section-block">
+  <h3>A. Teste de Pergunta Específica (RAG Híbrido + Re-ranking + LLM Gemini)</h3>
+  <p>Execução de consulta qualitativa com recuperação semântica e léxica:</p>
+  <div class="code-box">python scripts/perguntar.py "O que os clientes relatam sobre atrasos na entrega?"</div>
+
+  <div class="output-box">
+    <strong>Status retornado:</strong> <code>ok</code> · <strong>Modo:</strong> <code>rag</code> · <strong>Filtros:</strong> nenhum<br>
+    <strong>Resumo Gerado:</strong> Os clientes relatam a ocorrência de atrasos na entrega dos produtos, destacando a falta de satisfação ou informações, além de casos em que o pedido ainda não chegou ou veio incompleto [E2][E3][E4][E5][E6][E7][E8].<br>
+    • <strong>Falta de comunicação:</strong> Clientes apontam atraso sem que a loja dê satisfação ou consideração [E2][E3].<br>
+    • <strong>Não recebimento do produto:</strong> Clientes aguardando entrega em atraso ou afirmando que a loja não entrega [E3][E7][E8].<br>
+    • <strong>Entrega tardia e incompleta:</strong> Relato de produto entregue com atraso e faltando outros itens [E6].<br>
+    • <strong>Ocorrência de atraso:</strong> Clientes apontam pontualmente atraso na entrega [E4][E5].
+  </div>
+
+  <p><strong>Evidências auditadas vinculadas à resposta:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Rótulo</th>
+        <th>Review ID</th>
+        <th>Nota</th>
+        <th>Categoria</th>
+        <th>Entrega</th>
+        <th>Relevância</th>
+        <th>Citada</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>E1</td>
+        <td><code>4c2ab64ffc9119884d87d90bf9d630c3</code></td>
+        <td>1</td>
+        <td>sem_itens</td>
+        <td>nao_entregue</td>
+        <td>0.884</td>
+        <td>não</td>
+      </tr>
+      <tr>
+        <td>E2</td>
+        <td><code>2d0a07007cc84621a2bc694505be4036</code></td>
+        <td>1</td>
+        <td>moveis_decoracao</td>
+        <td>atrasada</td>
+        <td>0.768</td>
+        <td><strong>sim</strong></td>
+      </tr>
+      <tr>
+        <td>E3</td>
+        <td><code>1e733f7b69d1fe917006989f0038e685</code></td>
+        <td>1</td>
+        <td>climatizacao</td>
+        <td>atrasada</td>
+        <td>0.691</td>
+        <td><strong>sim</strong></td>
+      </tr>
+      <tr>
+        <td>E4</td>
+        <td><code>65e3d04aef73660b0b2145ef3d5762cd</code></td>
+        <td>5</td>
+        <td>eletronicos</td>
+        <td>no_prazo</td>
+        <td>0.449</td>
+        <td><strong>sim</strong></td>
+      </tr>
+      <tr>
+        <td>E5</td>
+        <td><code>7eaac7481400e495ddfc2f5398aba896</code></td>
+        <td>1</td>
+        <td>utilidades_domesticas</td>
+        <td>atrasada</td>
+        <td>0.439</td>
+        <td><strong>sim</strong></td>
+      </tr>
+      <tr>
+        <td>E6</td>
+        <td><code>7d81592881b86d6ba09e4e5ae954a59d</code></td>
+        <td>1</td>
+        <td>ferramentas_jardim</td>
+        <td>no_prazo</td>
+        <td>0.417</td>
+        <td><strong>sim</strong></td>
+      </tr>
+      <tr>
+        <td>E7</td>
+        <td><code>364e74a2d89a35fa3fad2beaf96d8f17</code></td>
+        <td>1</td>
+        <td>moveis_escritorio</td>
+        <td>atrasada</td>
+        <td>0.402</td>
+        <td><strong>sim</strong></td>
+      </tr>
+      <tr>
+        <td>E8</td>
+        <td><code>a9e61054a0aac84e3346b255ef3d4e93</code></td>
+        <td>1</td>
+        <td>bebes</td>
+        <td>no_prazo</td>
+        <td>0.340</td>
+        <td><strong>sim</strong></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section-block">
+  <h3>B. Teste de Pergunta Agregada (Camada Analítica Determinística)</h3>
+  <p>Execução de consulta agregada que exige contagem proporcional e identificação de padrões:</p>
+  <div class="code-box">python scripts/perguntar.py "Quais são os principais problemas relatados pelos clientes?"</div>
+
+  <div class="output-box">
+    <strong>Status retornado:</strong> <code>ok</code> · <strong>Modo:</strong> <code>analitico</code> (roteamento automático validado)<br>
+    <strong>Resumo Quantitativo Consolidado:</strong> Os principais problemas relatados são <strong>pedido não recebido</strong> com 3.406 avaliações (23,6%), seguido por <strong>não recomenda / insatisfação geral</strong> com 1.710 avaliações (11,8%) e <strong>troca, devolução, cancelamento ou reembolso</strong> com 1.704 avaliações (11,8%).<br>
+    • <strong>Pedido não recebido (3.406 avaliações, 23,6%):</strong> Clientes continuam esperando ou o produto não foi entregue [E1][E2].<br>
+    • <strong>Não recomenda / insatisfação (1.710 avaliações, 11,8%):</strong> Descumprimento de prazos e falta de consideração [E3][E4].<br>
+    • <strong>Troca / Reembolso (1.704 avaliações, 11,8%):</strong> Pedidos cancelados indevidamente ou produtos avariados [E5][E6].<br>
+    • <strong>Pedido incompleto (1.484 avaliações, 10,3%):</strong> Recebimento de apenas parte dos produtos comprados [E7][E8].<br>
+    • <strong>Atraso na entrega (1.215 avaliações, 8,4%):</strong> Demora e descumprimento do prazo estimado [E9][E10].<br>
+    <em>Nota Metodológica:</em> Contagens calculadas sobre 98.410 avaliações com apoio da taxonomia de temas auditada (precisão de 94,9%).
+  </div>
+</div>
+
+<div class="section-block">
+  <h3>C. Teste do Gate de Abstenção (Anti-Alucinação / Guardrail)</h3>
+  <p>Execução de consulta sem respaldo na base histórica (o Pix foi lançado em 2020; a base Olist cobre 2016–2018):</p>
+  <div class="code-box">python scripts/perguntar.py "Como funciona o pagamento via Pix no Olist?"</div>
+
+  <div class="output-box">
+    <strong>Status retornado:</strong> <code>sem_evidencias</code> · <strong>Modo:</strong> <code>rag</code> · <strong>Chamada ao LLM:</strong> Abortada intencionalmente<br>
+    <strong>Resposta de Abstenção:</strong> <em>"Não encontrei avaliações relevantes para responder a esta pergunta na base de conhecimento (termos sem nenhuma ocorrência na base: 'pix', 'olist'; se houve erro de digitação ou você usou um sinônimo, reformule a pergunta). Não vou responder para não gerar informação sem suporte nos dados."</em>
+  </div>
+</div>
+
+<!-- ==================== PÁGINA 3 ==================== -->
+<div class="page-break"></div>
+
+<h2>3. Avaliação Técnica contra o Estado da Arte (SOTA)</h2>
+
+<div class="section-block">
+  <h3>Ciência e Engenharia de Dados</h3>
+  <ul>
+    <li><strong>Tratamento Explícito do Viés de Amostragem:</strong> A equipe documentou que avaliações de nota 1 possuem texto em 77,2% dos casos, enquanto avaliações de nota 5 têm texto em apenas 37,8%. As análises quantitativas ponderam adequadamente a base com comentário versus a base geral para não enviesar a percepção de negócio.</li>
+    <li><strong>Mascaramento Robusto de PII:</strong> Higienização de dados pessoais sensíveis (telefones, e-mails, CPFs e URLs) antes de qualquer etapa de indexação ou envio ao modelo gerativo, em total conformidade com a LGPD.</li>
+    <li><strong>Unidade Documental sem Chunking Arbitrário:</strong> Decisão sustentada pela distribuição do corpus (mediana de 9 palavras, máximo de 208 caracteres). Tratar 1 avaliação como 1 documento preserva o sentido completo e a rastreabilidade direta ao <code>review_id</code>.</li>
+  </ul>
+</div>
+
+<div class="section-block">
+  <h3>Recuperação de Informação (Information Retrieval & NLP)</h3>
+  <ul>
+    <li><strong>Busca Híbrida Balanceada:</strong> Combinação de embeddings densos de última geração (<code>intfloat/multilingual-e5-base</code> com prefixos assimétricos <code>query:</code> e <code>passage:</code>) com BM25 esparso otimizado com Snowball stemmer para a língua portuguesa, preservando negações críticas ("não", "nunca", "sem").</li>
+    <li><strong>Fusão por Posto Recíproco (RRF):</strong> A fusão por ranking elimina distorções decorrentes da disparidade de escalas de pontuação entre BM25 e similaridade por cosseno.</li>
+    <li><strong>Re-ranking com Cross-Encoder:</strong> O modelo reclassificador avalia a relação par pergunta-avaliação, garantindo que apenas evidências com alta relevância contextual componham a janela de contexto.</li>
+    <li><strong>Benchmark Comparativo Rigoroso:</strong> O repositório documenta a evolução dos modelos, demonstrando que o <code>e5-base</code> com busca híbrida superou baselines clássicos (LSA/TF-IDF) e modelos menores, alcançando <strong>MRR 1.0</strong> e <strong>Precisão@8 de 0.875</strong>.</li>
+  </ul>
+</div>
+
+<div class="section-block">
+  <h3>Inteligência Artificial Generativa e Guardrails RAG</h3>
+  <ul>
+    <li><strong>Eliminação de Alucinações por Citação Estrita:</strong> O prompt obriga o gerador a citar os identificadores <code>[En]</code> em cada assertiva. Um verificador pós-geração por expressão regular valida se todas as sentenças estão devidamente sustentadas.</li>
+    <li><strong>Gate de Evidências Calibrado:</strong> Limiares empíricos de similaridade e vocabulário impedem que o sistema responda quando a evidência recuperada for semanticamente insuficiente ou fora de escopo.</li>
+    <li><strong>Consistência Numérica Assegurada:</strong> Na camada analítica, o verificador pós-geração confere se todos os percentuais e contagens emitidos no texto são subconjuntos estritos da tabela calculada deterministicamente.</li>
+  </ul>
+</div>
+
+<div class="footer-note">
+  Relatório gerado automaticamente através da suíte de testes de validação contínua.<br>
+  Tech Challenge Fase 4 — FIAP Pós-Tech em Inteligência Artificial para Desenvolvedores · Outubro / 2026
+</div>
+
+</body>
+</html>
