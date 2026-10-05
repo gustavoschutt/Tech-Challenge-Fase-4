@@ -7,7 +7,7 @@ O sistema transforma ~42 mil avaliações escritas por clientes da Olist numa ba
 | | |
 |---|---|
 | **Equipe** | Grupo 99<br>Gustavo Schilling Schutt — gustaschutt@hotmail.com<br>Tainá Julianotti — tainajulianotti@hotmail.com<br>Wilker Ferreira Cunha — wilker.ferreiracunha@gmail.com |
-| **Vídeo** | _preencher: link do vídeo (até 7 min)_ |
+| **Vídeo** | _preencher: link do vídeo (até 5 min)_ |
 | **Dataset** | [Brazilian E-Commerce Public Dataset by Olist](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce) (CC BY-NC-SA 4.0) |
 
 ## Para o avaliador
